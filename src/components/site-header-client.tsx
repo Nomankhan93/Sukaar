@@ -32,18 +32,19 @@ export function SiteHeaderClient() {
 
   return (
     <div className="border-b border-black/5 bg-white/90 backdrop-blur">
-      <div className="container-poem flex h-20 items-center justify-between gap-4">
-        <div className="flex items-center gap-6">
+      <div className="mx-auto flex h-20 w-[min(1320px,calc(100%_-_28px))] items-center justify-between gap-8 md:w-[min(1320px,calc(100%_-_40px))]">
+        <div className="flex shrink-0 items-center">
           <SukaarLogo
             href="/"
             variant="horizontal"
             size="lg"
             priority
+            className="shrink-0"
             imageClassName="max-h-16 w-auto object-contain"
           />
         </div>
 
-        <nav className="hidden items-center gap-4 2xl:flex 2xl:gap-5">
+        <nav className="hidden shrink-0 items-center gap-3 2xl:flex 2xl:gap-4">
           {navigation.map((item) => {
             const active =
               pathname === item.href ||
@@ -53,7 +54,7 @@ export function SiteHeaderClient() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-bold transition ${navLinkClasses(active)}`}
+                className={`text-[13px] font-bold transition min-[1760px]:text-sm ${navLinkClasses(active)}`}
               >
                 {item.label}
               </Link>
@@ -62,7 +63,7 @@ export function SiteHeaderClient() {
 
           <Link
             href="/donate"
-            className="rounded-full bg-poem-950 px-5 py-3 text-sm font-extrabold text-white transition hover:translate-y-[-1px]"
+            className="rounded-full bg-poem-950 px-4 py-3 text-[13px] font-extrabold text-white transition hover:translate-y-[-1px] min-[1760px]:px-5 min-[1760px]:text-sm"
           >
             Donate
           </Link>
