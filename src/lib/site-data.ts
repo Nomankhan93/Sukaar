@@ -1,3 +1,4 @@
+import { sukaarPublicProjects } from "@/lib/sukaar-profile";
 import {
   BookOpen,
   BriefcaseBusiness,
@@ -138,68 +139,8 @@ export const programs = [
   },
 ];
 
-export const projects = [
-  {
-    slug: "young-omang-child-marriage-advocacy-2024",
-    title: "Young Omang: Child Marriage Advocacy Campaign",
-    category: "Human Rights & Governance",
-    location: "Umerkot, Sindh",
-    status: "Completed",
-    summary:
-      "A 2024 advocacy campaign on early and forced child marriage, focused on awareness and implementation of the Sindh Child Marriage Restraint Act 2013.",
-    challenge:
-      "The initiative addressed early and forced child marriage through community awareness and implementation-focused advocacy.",
-    response:
-      "Sukaar implemented the campaign under Young Omang Pakistan with Indus Resource Centre and Chanan Development Association during 2024.",
-    outcomes: [
-      "Community advocacy and awareness around the Sindh Child Marriage Restraint Act 2013",
-      "Local engagement on prevention of early and forced child marriage",
-    ],
-    sdgs: [],
-    accent: "from-[#fff7a8] to-[#e8cf58]",
-  },
-  {
-    slug: "power-to-the-youth-2022-2024",
-    title: "Power to the Youth",
-    category: "Youth Development",
-    location: "Mirpurkhas, Sindh",
-    status: "Completed",
-    summary:
-      "A Norwegian Church Aid-supported initiative strengthening youth activism, inclusive governance and social accountability from September 2022 to December 2024.",
-    challenge:
-      "The project focused on strengthening youth participation and civil society engagement in inclusive governance and social accountability.",
-    response:
-      "Sukaar supported youth activism, stakeholder engagement, advocacy and outreach while strengthening the role of civil society in governance processes.",
-    outcomes: [
-      "Youth activism and participation supported",
-      "Civil society engagement on inclusive governance strengthened",
-      "Advocacy and outreach activities delivered",
-    ],
-    sdgs: [],
-    accent: "from-[#eadcf0] to-[#bfa7ca]",
-  },
-  {
-    slug: "flood-response-umerkot-2022",
-    title: "Flood Response Activities 2022",
-    category: "Climate & Disaster Response",
-    location: "Umerkot, Sindh",
-    status: "Completed",
-    summary:
-      "Emergency support for flood-affected families and children in Umerkot, including temporary learning and food assistance.",
-    challenge:
-      "Flood-affected families and children required immediate learning continuity and basic humanitarian support.",
-    response:
-      "Sukaar supported temporary learning centres and direct assistance for families and children in displacement settings.",
-    outcomes: [
-      "2 temporary learning centres established",
-      "158 students enrolled in temporary learning centres",
-      "530 families provided cooked food",
-      "170 pairs of shoes, chocolates and gifts distributed to students",
-    ],
-    sdgs: [],
-    accent: "from-[#f2e8c7] to-[#c9b171]",
-  },
-];
+export const projects = sukaarPublicProjects;
+
 
 export const principles = [
   {

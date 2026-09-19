@@ -107,68 +107,60 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
         {funding ? <ProjectFundingSummary funding={funding} /> : null}
 
-        <section className="section-space bg-white">
-          <div className="container-poem grid gap-12 lg:grid-cols-[1fr_.7fr]">
-            <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">
-                The challenge
-              </p>
-              <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.05em] text-poem-950">
-                Why this work matters.
-              </h2>
-              <p className="mt-6 text-lg leading-9 text-poem-muted">
-                {project.challenge}
-              </p>
+        {project.challenge || project.response || project.outcomes.length || project.sdgs.length ? (
+          <section className="section-space bg-white">
+            <div className="container-poem grid gap-12 lg:grid-cols-[1fr_.7fr]">
+              <div>
+                {project.challenge ? (
+                  <>
+                    <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">The context</p>
+                    <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.05em] text-poem-950">Why this work matters.</h2>
+                    <p className="mt-6 text-lg leading-9 text-poem-muted">{project.challenge}</p>
+                  </>
+                ) : null}
 
-              <div className="mt-12 border-t border-black/10 pt-10">
-                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">
-                  Sukaar&apos;s response
-                </p>
-                <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.05em] text-poem-950">
-                  Designed around participation.
-                </h2>
-                <p className="mt-6 text-lg leading-9 text-poem-muted">
-                  {project.response}
-                </p>
-              </div>
-            </div>
-
-            <aside className="rounded-[30px] bg-poem-soft p-7 md:p-8">
-              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">
-                Expected outcomes
-              </p>
-
-              <div className="mt-6 space-y-4">
-                {project.outcomes.map((outcome: string) => (
-                  <div key={outcome} className="flex gap-3">
-                    <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-poem-lime text-poem-950">
-                      <Check size={14} strokeWidth={3} />
-                    </span>
-                    <p className="text-sm font-bold leading-6 text-poem-900">
-                      {outcome}
-                    </p>
+                {project.response ? (
+                  <div className={project.challenge ? "mt-12 border-t border-black/10 pt-10" : ""}>
+                    <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">Documented response</p>
+                    <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.05em] text-poem-950">How Sukaar responded.</h2>
+                    <p className="mt-6 text-lg leading-9 text-poem-muted">{project.response}</p>
                   </div>
-                ))}
+                ) : null}
               </div>
 
-              <div className="mt-8 border-t border-poem-900/10 pt-7">
-                <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">
-                  SDG alignment
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.sdgs.map((sdg: string) => (
-                    <span
-                      key={sdg}
-                      className="rounded-full bg-white px-3 py-2 text-xs font-extrabold text-poem-900"
-                    >
-                      {sdg}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </aside>
-          </div>
-        </section>
+              {project.outcomes.length || project.sdgs.length ? (
+                <aside className="rounded-[30px] bg-poem-soft p-7 md:p-8">
+                  {project.outcomes.length ? (
+                    <>
+                      <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">Documented results</p>
+                      <div className="mt-6 space-y-4">
+                        {project.outcomes.map((outcome: string) => (
+                          <div key={outcome} className="flex gap-3">
+                            <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-poem-lime text-poem-950">
+                              <Check size={14} strokeWidth={3} />
+                            </span>
+                            <p className="text-sm font-bold leading-6 text-poem-900">{outcome}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : null}
+
+                  {project.sdgs.length ? (
+                    <div className={project.outcomes.length ? "mt-8 border-t border-poem-900/10 pt-7" : ""}>
+                      <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">SDG alignment</p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {project.sdgs.map((sdg: string) => (
+                          <span key={sdg} className="rounded-full bg-white px-3 py-2 text-xs font-extrabold text-poem-900">{sdg}</span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+                </aside>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
 
         {project.gallery.length ? (
           <section className="section-space bg-poem-cream">

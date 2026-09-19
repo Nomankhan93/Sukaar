@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type { MediaAsset } from "@/lib/media";
+import { sukaarBoardMembers, sukaarPartners } from "@/lib/sukaar-profile";
 
 function one<T>(relation: T | T[] | null | undefined): T | null {
   if (!relation) return null;
@@ -17,7 +18,7 @@ function publicUrl(
 }
 
 export async function getPartners() {
-  if (!isSupabaseConfigured()) return [];
+  if (!isSupabaseConfigured()) return sukaarPartners.map((partner) => ({ ...partner }));
   const supabase = await createClient();
 
   const { data, error } = await supabase
@@ -30,9 +31,9 @@ export async function getPartners() {
     .order("display_order")
     .order("name");
 
-  if (error) return [];
+  if (error || !data?.length) return sukaarPartners.map((partner) => ({ ...partner }));
 
-  return (data ?? []).map((row) => ({
+  return data.map((row) => ({
     id: row.id,
     name: row.name,
     slug: row.slug,
@@ -48,7 +49,7 @@ export async function getPartners() {
 }
 
 export async function getTeamMembers() {
-  if (!isSupabaseConfigured()) return [];
+  if (!isSupabaseConfigured()) return sukaarBoardMembers.map((member) => ({ ...member }));
   const supabase = await createClient();
 
   const { data, error } = await supabase
@@ -61,7 +62,7 @@ export async function getTeamMembers() {
     .order("display_order")
     .order("name");
 
-  if (error) return [];
+  if (error || !data?.length) return sukaarBoardMembers.map((member) => ({ ...member }));
 
   return (data ?? []).map((row) => ({
     id: row.id,

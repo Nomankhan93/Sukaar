@@ -147,6 +147,19 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="section-space bg-white">
+          <div className="container-poem rounded-[32px] border border-black/[0.07] p-8 md:p-10">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-poem-700">Institutional profile</p>
+            <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h2 className="max-w-3xl text-3xl font-extrabold tracking-[-0.04em] text-poem-950 md:text-4xl">Explore Sukaar’s registration, governance, networks and full project experience.</h2>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-poem-muted">The detailed profile preserves the information supplied in Sukaar’s organization profile while excluding personal CNIC numbers and private banking details from public pages.</p>
+              </div>
+              <a href="/about/profile" className="inline-flex shrink-0 items-center justify-center rounded-full bg-poem-950 px-6 py-3 text-sm font-extrabold text-white">View full organization profile</a>
+            </div>
+          </div>
+        </section>
+
         <PageCta
           title="Partner with Sukaar for community-led development."
           description="We welcome collaboration with communities, development partners, public institutions, civil society networks and supporters working for inclusive and sustainable development."

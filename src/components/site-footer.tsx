@@ -6,6 +6,7 @@ import { getSiteSettings } from "@/lib/site-settings";
 
 const quickLinks = [
   { href: "/about", label: "About" },
+  { href: "/about/profile", label: "Organization Profile" },
   { href: "/programs", label: "Programs" },
   { href: "/projects", label: "Projects" },
   { href: "/impact", label: "Impact" },
