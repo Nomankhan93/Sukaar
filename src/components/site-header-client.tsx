@@ -37,9 +37,9 @@ export function SiteHeaderClient() {
           <SukaarLogo
             href="/"
             variant="horizontal"
-            size="md"
+            size="lg"
             priority
-            imageClassName="max-h-12 w-auto object-contain"
+            imageClassName="max-h-16 w-auto object-contain"
           />
         </div>
 
@@ -92,8 +92,8 @@ export function SiteHeaderClient() {
               <SukaarLogo
                 href="/"
                 variant="horizontal"
-                size="sm"
-                imageClassName="max-h-10 w-auto object-contain"
+                size="md"
+                imageClassName="max-h-12 w-auto object-contain"
               />
               <button
                 type="button"
