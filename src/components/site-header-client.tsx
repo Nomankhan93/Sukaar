@@ -13,7 +13,10 @@ const navigation = [
   { href: "/projects", label: "Projects" },
   { href: "/impact", label: "Impact" },
   { href: "/partners", label: "Partners" },
+  { href: "/resources", label: "Resources" },
+  { href: "/stories", label: "Stories" },
   { href: "/news", label: "News" },
+  { href: "/fundraising", label: "Fundraising" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -40,7 +43,7 @@ export function SiteHeaderClient() {
           />
         </div>
 
-        <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
+        <nav className="hidden items-center gap-4 2xl:flex 2xl:gap-5">
           {navigation.map((item) => {
             const active =
               pathname === item.href ||
@@ -67,7 +70,7 @@ export function SiteHeaderClient() {
 
         <button
           type="button"
-          className="grid size-11 place-items-center rounded-xl border border-black/10 lg:hidden"
+          className="grid size-11 place-items-center rounded-xl border border-black/10 2xl:hidden"
           aria-label="Open navigation"
           onClick={() => setOpen(true)}
         >
@@ -76,7 +79,7 @@ export function SiteHeaderClient() {
       </div>
 
       {open ? (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div className="fixed inset-0 z-50 2xl:hidden">
           <button
             type="button"
             className="absolute inset-0 bg-black/45"

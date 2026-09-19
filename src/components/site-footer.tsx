@@ -14,6 +14,7 @@ const quickLinks = [
   { href: "/resources", label: "Resources" },
   { href: "/stories", label: "Stories" },
   { href: "/news", label: "News" },
+  { href: "/fundraising", label: "Fundraising" },
 ];
 
 const actionLinks = [
